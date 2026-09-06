@@ -579,6 +579,11 @@ h6{
     
     color: gray;
   }
+  #ims{
+    position: relative;
+    top: -198vh;
+    width: 50px;
+  }
 </style>
 
 
@@ -590,6 +595,7 @@ h6{
 
 
 <body>
+  <div><img id="ims"src="https://i.ibb.co/pvvpPHn0/file-00000000842c8210b4f03f014764a7fc.png"</div>
 
     <h1 class="name">ابو حمزة للتوصيل</h1>
 
@@ -735,8 +741,12 @@ h6{
   
 
 <script id="btn">
+  let re = document.getElementById('ims');
   let divv = document.getElementById('numbers');
   let started = false;
+  re.onclick = function(){
+    location.reload();
+  }
 
 window.onscroll = function () {
 
@@ -882,4 +892,4 @@ btns.onclick = function() {
 </body>
 
   
-      </html> 
+</html>
