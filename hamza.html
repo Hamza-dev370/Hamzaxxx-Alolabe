@@ -31,7 +31,6 @@
             font-family: "Cairo", sans-serif;
         }
 
-        /* ===== Hero ===== */
         .hero {
             background: #3248DE;
             min-height: 440px;
@@ -98,13 +97,11 @@
             background: rgba(255, 255, 255, .22);
         }
 
-        /* ===== Cards ===== */
         .mah {
             display: grid;
             grid-template-columns: 1fr;
             gap: 20px;
             padding: 40px 20px;
-            background: #f1f5f9;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -118,38 +115,183 @@
             font-size: clamp(24px, 5vw, 32px);
         }
 
-        .item {
+        #item {
             padding: 40px 20px;
-            border-radius: 12px;
+            border-radius: 25px;
             color: #fff;
             text-align: center;
             font-size: 1.2rem;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
             min-height: 150px;
             transition: transform 0.3s;
+            animation: ite 3s ease-in 0.1s forwards;
         }
 
-        .item:hover {
+        #item:hover {
             transform: translateY(-5px);
         }
 
-        .item p {
+        #item p {
+            font-size: 25px;
             margin: 0;
+            display: block;
+            position: relative;
+            bottom: 12px;
+            white-space: nowrap;
             font-family: "Cairo", sans-serif;
         }
 
         .mah i {
-            color: skyblue;
             margin-right: 8px;
         }
 
-        /* ===== Responsive: لابتوب عمودان ===== */
         @media (min-width: 768px) {
             .mah {
                 grid-template-columns: repeat(2, 1fr);
             }
+        }
+
+        .mah small {
+            text-align: center;
+            font-size: 13px;
+        }
+
+        #item:before {
+            content: "";
+            position: absolute;
+            width: 140px;
+            height: 180px;
+            box-shadow: 0px 0px 25px rgba(255, 255, 255, .06);
+            background: rgba(255, 255, 255, .06);
+            border-radius: 50%;
+        }
+
+        #btns {
+            background: orange;
+            color: black;
+            z-index: 100;
+            box-shadow: 0px 0px 6px yellow;
+            position: fixed;
+            bottom: 7vh;
+            right: 10vw;
+            width: 35px;
+            height: 35px;
+            display: none;
+            border-radius: 50%;
+            border: none;
+            transform-style: preserve-3d;
+            perspective: 800000px;
+        }
+
+        .numbe {
+            text-align: center;
+            width: 45vw;
+            height: 500px;
+            position: relative;
+            top: 30px;
+            right: 30vw;
+            background: #0f172a;
+            border-radius: 25px;
+            border: 2px dashed #334155;
+            border-right: 4px solid #1ABB4C;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .price {
+            color: #BBA61A;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .coco {
+            color: #94a3b8;
+        }
+
+        .numm {
+            font-size: 30px;
+            color: #1ABB4C;
+        }
+
+        #number i {
+            font-size: 31px;
+            white-space: nowrap;
+            color: #BBA61A;
+        }
+
+        .numbe:hover {
+            transform: translateY(-5px);
+        }
+
+        .numbe hr {
+            border: none;
+            border-top: 1px solid #334155;
+            margin: 15px 0;
+        }
+
+        .media {
+            position: relative;
+            border-radius: 15px;
+            color: black;
+            width: 80vw;
+            color: #c6ad14;
+            top: 30px;
+            font-family: "Cairo", sans-serif;
+        }
+
+        .whats {
+            top: 30px;
+            background: #25D366;
+            display: block;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: 15px;
+            width: 100vw;
+            text-decoration: none;
+            color: white;
+            box-shadow: 0px 2px 1px black;
+            height: 32px;
+        }
+
+        #tele {
+            top: 36px;
+            background: #39b6e8;
+            display: block;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: 15px;
+            width: 100vw;
+            text-decoration: none;
+            color: white;
+            box-shadow: 0px 2px 1px black;
+            height: 32px;
+            padding-bottom: 15px;
+        }
+
+        footer {
+            margin-top: 120px;
+            padding: 30px 20px;
+            background: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            font-size: 14px;
+            line-height: 2;
+            direction: rtl;
+        }
+
+        footer a {
+            color: #BBA61A;
+            text-decoration: none;
+        }
+
+        footer i {
+            color: #BBA61A;
         }
     </style>
 </head>
@@ -163,30 +305,130 @@
             <p>
                 انشئ موقعك الإلكتروني للوصول لأكبر عدد من العملاء من خلال إيصال و نشر عملك على الانترنت
             </p>
-            <a class="hero-btn" href="#mah">اكتشف المميزات ↓</a>
+            <a class="hero-btn" href="#maha">اكتشف المميزات ↓</a>
+            <a class="hero-btn" href="#mah">مجالاتنا التقنية↓</a>
         </div>
+        <button id="btns">
+            <i class="fas fa-chevron-up"></i>
+        </button>
     </header>
 
     <div class="mah" id="mah">
         <h2 class="hh2">خدماتنا التقنية</h2>
 
-        <div class="item" style="background: #1A27BB;">
+        <div id="item" style="background: #1A27BB;">
             <p>صفحات شخصية <i class="fa-solid fa-user"></i></p>
+            <small>موقع يعرّف بك كشخص، يعرض سيرتك الذاتية، مهاراتك، أعمالك، وطرق التواصل معك. مناسب للمستقلين، المصممين، المبرمجين، وأي شخص يريد حضوراً احترافياً على الإنترنت.</small>
         </div>
 
-        <div class="item" style="background: #1ABB4C;">
+        <div id="item" style="background: #1ABB4C;">
             <p>صفحات للشركات <i class="fa-solid fa-building"></i></p>
+            <small>موقع تعريفي لشركتك أو مؤسستك، يعرض خدماتك، رؤيتك، فريقك، وأعمالك السابقة. يساعد عملاءك على معرفتك والثقة بك، ويعطيك حضوراً رسمياً واحترافياً في السوق.</small>
         </div>
 
-        <div class="item" style="background: #BB1A1A;">
+        <div id="item" style="background: #BB1A1A;">
             <p>صفحات هبوط <i class="fa-solid fa-rocket"></i></p>
+            <small>صفحة واحدة مركّزة، هدفها إقناع الزائر باتخاذ إجراء محدد: شراء منتج، التسجيل في خدمة، أو تحميل تطبيق. مصممة بعناية لتحويل الزوار إلى عملاء بأعلى نسبة ممكنة.</small>
         </div>
 
-        <div class="item" style="background: #BBA61A;">
+        <div id="item" style="background: #BBA61A;">
             <p>مواقع للمحلات التجارية <i class="fa-solid fa-cart-shopping"></i></p>
+            <small>متجر إلكتروني متكامل يعرض منتجاتك بصور وأوصاف وأسعار، مع إمكانية البحث والتصفح والشراء. يفتح لك باباً للبيع على الإنترنت ويوسّع نطاق عملائك خارج نطاقك الجغرافي.</small>
         </div>
     </div>
 
+    <div class="mah" id="maha">
+        <h2 class="hh2">ميزات خدماتنا</h2>
+
+        <div id="item" style="background: #1A27BB;">
+            <p>سرعة في التسليم <i class="fa-solid fa-gauge-high"></i></p>
+            <small>تسليم مشروعك في الوقت المتفق عليه دون تأخير، مع جودة عالية في كل تفصيلة.</small>
+        </div>
+
+        <div id="item" style="background: #1ABB4C;">
+            <p>توافق مع جميع الأجهزة <i class="fa-solid fa-laptop"></i></p>
+            <small>موقعك يظهر بشكل مثالي على الجوال، التابلت، واللابتوب — تجربة سلسة للجميع.</small>
+        </div>
+
+        <div id="item" style="background: #BB1A1A;">
+            <p>تقنيات حديثة <i class="fa-solid fa-microchip"></i></p>
+            <small>أستخدم أحدث التقنيات والمعايير العالمية لبناء موقع سريع وآمن وقابل للتطوير.</small>
+        </div>
+
+        <div id="item" style="background: #BBA61A;">
+            <p>دعم وصيانة <i class="fa-solid fa-screwdriver-wrench"></i></p>
+            <small>معك بعد التسليم — أي تعديل أو مشكلة، أنا جاهز للمساعدة بسرعة.</small>
+        </div>
+    </div>
+
+    <div class="numbe">
+        <h4 class="price">أسعارنا اليوم <i class="fa-solid fa-tags"></i></h4>
+        <b id="number"><span class="numm">15</span> <i class="fa-solid fa-dollar-sign"></i> <b class="coco">موقع كامل مع دومين سنوي.</b></b>
+        <hr>
+        <b id="number"><span class="numm">10</span> <i class="fa-solid fa-dollar-sign"></i> <b class="coco">موقع كامل مع دومين مجاني.</b></b>
+        <hr>
+        <b id="number"><span class="numm">6</span> <i class="fa-solid fa-dollar-sign"></i> <b class="coco">شهريا</b></b>
+    </div>
+
+    <h1 class="media"><i class="fas fa-headset"></i> تواصل معنا</h1>
+    <a href="https://wa.me/963946792295?text=السلام%20عليكم%20أنا%20شفت%20موقعكم%20وأريد%20استفسار">
+        <span class="whats"><i class="fab fa-whatsapp"></i> الدعم الفني واتساب</span>
+    </a>
+    <a id="tele" href="https://t.me/ham3_x1">
+        <span class="tele"><i class="fab fa-telegram"></i> الدعم الفني تيليجرام</span>
+    </a>
+
+    <footer>
+        <p>© 2025 Dev Hamza — جميع الحقوق محفوظة</p>
+        <p>صُنع بـ <i class="fa-solid fa-heart"></i> في سوريا</p>
+        <p>
+            <a href="https://wa.me/963946792295"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://t.me/ham3_x1"><i class="fab fa-telegram"></i></a>
+            <a href="https://www.instagram.com/ham3_x1?stkn=MTh4czhvc2tncW02Mw=="><i class="fab fa-instagram"></i></a>
+        </p>
+    </footer>
+
+    <script>
+        let btns = document.getElementById('btns');
+
+        window.onscroll = function () {
+            if (scrollY >= 170) {
+                btns.style.display = 'inline';
+                document.body.style.overflowX = 'hidden';
+            } else {
+                btns.style.display = 'none';
+                document.body.style.overflowX = 'hidden';
+            }
+        };
+
+        btns.onclick = function () {
+            scroll({
+                left: 0,
+                top: 0,
+                behavior: "smooth"
+            });
+
+            document.body.style.overflowX = 'hidden';
+
+            this.style.transform = 'translateY(-20px) rotate(20deg) scale(1.3)';
+            this.style.backgroundColor = '#ff4500';
+            this.style.boxShadow = '0 0 30px #ff4500, 0 0 60px #ff8800';
+            this.style.transition = '0.1s';
+
+            setTimeout(() => {
+                this.style.transform = 'translateY(10px) rotate(-10deg) scale(0.9)';
+                this.style.backgroundColor = '#ff6600';
+                this.style.boxShadow = '0 0 20px #ff8800';
+            }, 150);
+
+            setTimeout(() => {
+                this.style.transform = 'translateY(0) rotate(0deg) scale(1)';
+                this.style.backgroundColor = 'orange';
+                this.style.boxShadow = '0px 0px 10px yellow';
+                this.style.transition = '0.2s';
+            }, 350);
+        };
+    </script>
 </body>
 
 </html>
